@@ -7,13 +7,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class CardSelectionVC: UIViewController {
+    
+    @IBOutlet var CardImageView: UIImageView!
+    @IBOutlet var buttons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    @IBAction func stopButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func restartButtonTapped(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func rulesButtonTapped(_ sender: UIButton) {
+    }
 }
 

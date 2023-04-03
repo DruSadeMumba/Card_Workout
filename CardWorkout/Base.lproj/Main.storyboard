@@ -11,7 +11,7 @@
         <!--Card SelectionVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CardSelectionVC" customModule="CardWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardSelectionVC" customModule="CardWorkout" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,18 +30,21 @@
                                     <constraint firstAttribute="width" constant="260" id="fhJ-nQ-eOa"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
                                     <attributedString key="attributedTitle">
                                         <fragment content="STOP!">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <font key="NSFont" size="24" name="Chalkboard-Bold"/>
+                                                <font key="NSFont" size="24" name="ComicSansMS-Bold"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbd-qe-0IU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBs-HO-9Q4">
                                 <rect key="frame" x="66.666666666666671" y="646" width="115.00000000000001" height="50"/>
@@ -50,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="50" id="c0D-6a-JRg"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
                                     <attributedString key="attributedTitle">
                                         <fragment content="RESTART">
                                             <attributes>
@@ -62,6 +65,9 @@
                                     </attributedString>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="restartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SmZ-P7-Yqj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6v-vY-3ed">
                                 <rect key="frame" x="211.66666666666663" y="646" width="115" height="50"/>
@@ -70,7 +76,7 @@
                                     <constraint firstAttribute="width" constant="115" id="N2K-E7-xcc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
                                     <attributedString key="attributedTitle">
                                         <fragment content="RULES">
                                             <attributes>
@@ -80,6 +86,10 @@
                                     </attributedString>
                                     <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rulesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IS4-Ik-KkW"/>
+                                    <segue destination="wmY-fc-BDR" kind="presentation" id="We4-pV-vvx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -95,10 +105,64 @@
                             <constraint firstItem="G7m-fj-jjz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yGK-5B-rgU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CardImageView" destination="G7m-fj-jjz" id="cF8-kH-Dvo"/>
+                        <outletCollection property="buttons" destination="lVD-mV-s5L" collectionClass="NSMutableArray" id="UAJ-Qf-jIM"/>
+                        <outletCollection property="buttons" destination="MBs-HO-9Q4" collectionClass="NSMutableArray" id="Ywo-5O-KtD"/>
+                        <outletCollection property="buttons" destination="O6v-vY-3ed" collectionClass="NSMutableArray" id="B0i-gv-be2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="-2"/>
+            <point key="canvasLocation" x="-810" y="-3"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="232-jQ-hWb">
+            <objects>
+                <viewController id="wmY-fc-BDR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rWJ-2U-udW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RULES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHV-c9-KWo">
+                                <rect key="frame" x="30" y="129" width="333" height="56.666666666666657"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The value of each card represents the number of exercise you do.  J = 11, Q = 12, K=13, A= 14." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORz-Wd-6p1">
+                                <rect key="frame" x="30" y="210.66666666666663" width="333" height="119"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♠️ = Push-up  ❤️ = Sit-up  ♦️ = Burpees   ♣️ = Jumping-jacks" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGl-zP-fIB">
+                                <rect key="frame" x="46.666666666666657" y="379.66666666666669" width="300" height="208.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="gMD-wt-mnT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bQs-gN-VgK"/>
+                        <constraints>
+                            <constraint firstItem="NHV-c9-KWo" firstAttribute="top" secondItem="bQs-gN-VgK" secondAttribute="top" constant="70" id="OgV-3g-Q2Z"/>
+                            <constraint firstItem="bQs-gN-VgK" firstAttribute="trailing" secondItem="NHV-c9-KWo" secondAttribute="trailing" constant="30" id="SeJ-Nq-ltL"/>
+                            <constraint firstItem="ORz-Wd-6p1" firstAttribute="top" secondItem="NHV-c9-KWo" secondAttribute="bottom" constant="25" id="Xe9-3Q-cBs"/>
+                            <constraint firstItem="uGl-zP-fIB" firstAttribute="centerX" secondItem="rWJ-2U-udW" secondAttribute="centerX" id="bQ7-rz-f71"/>
+                            <constraint firstItem="uGl-zP-fIB" firstAttribute="top" secondItem="ORz-Wd-6p1" secondAttribute="bottom" constant="50" id="ceF-VP-c2T"/>
+                            <constraint firstItem="ORz-Wd-6p1" firstAttribute="leading" secondItem="bQs-gN-VgK" secondAttribute="leading" constant="30" id="nz1-aU-WH6"/>
+                            <constraint firstItem="bQs-gN-VgK" firstAttribute="trailing" secondItem="ORz-Wd-6p1" secondAttribute="trailing" constant="30" id="phR-sU-qou"/>
+                            <constraint firstItem="NHV-c9-KWo" firstAttribute="leading" secondItem="bQs-gN-VgK" secondAttribute="leading" constant="30" id="tBf-4n-5Zy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RKB-8A-uxg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAn-AO-8Gh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="-4"/>
         </scene>
     </scenes>
     <resources>
