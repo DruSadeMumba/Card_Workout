@@ -147,6 +147,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bQs-gN-VgK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NHV-c9-KWo" firstAttribute="top" secondItem="bQs-gN-VgK" secondAttribute="top" constant="70" id="OgV-3g-Q2Z"/>
                             <constraint firstItem="bQs-gN-VgK" firstAttribute="trailing" secondItem="NHV-c9-KWo" secondAttribute="trailing" constant="30" id="SeJ-Nq-ltL"/>
