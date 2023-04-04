@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E6FE3F129DBDCB400F7FC07 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6FE3F029DBDCB400F7FC07 /* Card.swift */; };
 		6EF57D8629DAD15500A56E2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF57D8529DAD15500A56E2D /* AppDelegate.swift */; };
 		6EF57D8829DAD15500A56E2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF57D8729DAD15500A56E2D /* SceneDelegate.swift */; };
 		6EF57D8A29DAD15500A56E2D /* CardSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF57D8929DAD15500A56E2D /* CardSelectionVC.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E6FE3F029DBDCB400F7FC07 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		6EF57D8229DAD15500A56E2D /* CardWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF57D8529DAD15500A56E2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF57D8729DAD15500A56E2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				6EF57D8529DAD15500A56E2D /* AppDelegate.swift */,
 				6EF57D8729DAD15500A56E2D /* SceneDelegate.swift */,
 				6EF57D8929DAD15500A56E2D /* CardSelectionVC.swift */,
+				6E6FE3F029DBDCB400F7FC07 /* Card.swift */,
 				6EF57D8B29DAD15500A56E2D /* Main.storyboard */,
 				6EF57D8E29DAD15500A56E2D /* Assets.xcassets */,
 				6EF57D9029DAD15500A56E2D /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				6EF57D8A29DAD15500A56E2D /* CardSelectionVC.swift in Sources */,
 				6EF57D8629DAD15500A56E2D /* AppDelegate.swift in Sources */,
 				6EF57D8829DAD15500A56E2D /* SceneDelegate.swift in Sources */,
+				6E6FE3F129DBDCB400F7FC07 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
