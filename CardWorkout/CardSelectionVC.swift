@@ -20,8 +20,13 @@ class CardSelectionVC: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
+    }
+    
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(showRandomCard), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(showRandomCard), userInfo: nil, repeats: true)
     }
     
     @objc func showRandomCard(){
@@ -29,16 +34,12 @@ class CardSelectionVC: UIViewController {
     }
     
     @IBAction func stopButtonTapped(_ sender: UIButton) {
-        print("Stopped")
+        timer.invalidate()
     }
     
     @IBAction func restartButtonTapped(_ sender: UIButton) {
-        print("Restart")
-    }
-    
-    
-    @IBAction func rulesButtonTapped(_ sender: UIButton) {
-        print("Rules")
+        timer.invalidate()
+        startTimer()
     }
 }
 
