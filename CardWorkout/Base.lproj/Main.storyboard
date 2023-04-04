@@ -106,9 +106,6 @@
                     </view>
                     <connections>
                         <outlet property="CardImageView" destination="G7m-fj-jjz" id="cF8-kH-Dvo"/>
-                        <outletCollection property="buttons" destination="lVD-mV-s5L" collectionClass="NSMutableArray" id="UAJ-Qf-jIM"/>
-                        <outletCollection property="buttons" destination="MBs-HO-9Q4" collectionClass="NSMutableArray" id="Ywo-5O-KtD"/>
-                        <outletCollection property="buttons" destination="O6v-vY-3ed" collectionClass="NSMutableArray" id="B0i-gv-be2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

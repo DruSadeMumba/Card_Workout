@@ -10,7 +10,7 @@ import UIKit
 class CardSelectionVC: UIViewController {
     
     @IBOutlet var CardImageView: UIImageView!
-    @IBOutlet var buttons: [UIButton]!
+    
     var timer: Timer!
     var cards: [UIImage] = Card.allValues
     
