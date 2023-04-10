@@ -10,9 +10,9 @@ import UIKit
 class CardSelectionVC: UIViewController {
     
     let cardImageView = UIImageView()
-    let stopButton    = CWButton(backgroundColour: .systemRed, title:   "STOP!", color: .white)
-    let restartButton = CWButton(backgroundColour: .systemGreen, title: "RESTART", color: .white)
-    let rulesButton   = CWButton(backgroundColour: .systemCyan, title:  "RULES", color: .white)
+    let stopButton    = CWButton(colour: .systemRed, title:   "STOP!", imageName: "stop.circle")
+    let restartButton = CWButton(colour: .systemGreen, title: "RESTART", imageName: "arrow.clockwise")
+    let rulesButton   = CWButton(colour: .systemCyan, title:  "RULES", imageName: "list.bullet.clipboard")
     
     var cards: [UIImage] = Card.allValues
     var timer: Timer!
@@ -70,7 +70,7 @@ class CardSelectionVC: UIViewController {
         ])
     }
     
-    @objc func stopButtonTapped(_ sender: UIButton) {
+    @objc func stopButtonTapped() {
         timer.invalidate()
     }
     
@@ -87,7 +87,7 @@ class CardSelectionVC: UIViewController {
         ])
     }
     
-    @objc func restartButtonTapped(_ sender: UIButton) {
+    @objc func restartButtonTapped() {
         timer.invalidate()
         startTimer()
     }
