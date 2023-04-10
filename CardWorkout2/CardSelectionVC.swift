@@ -14,10 +14,27 @@ class CardSelectionVC: UIViewController {
     let restartButton = CWButton(backgroundColour: .systemGreen, title: "RESTART", color: .white)
     let rulesButton   = CWButton(backgroundColour: .systemCyan, title:  "RULES", color: .white)
     
+    var cards: [UIImage] = Card.allValues
+    var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        startTimer()
         configureUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(showRandomCard), userInfo: nil, repeats: true)
+    }
+    
+    @objc func showRandomCard(){
+        cardImageView.image = cards.randomElement() ?? UIImage (named: "AS")
     }
     
     func configureUI(){
@@ -42,6 +59,7 @@ class CardSelectionVC: UIViewController {
     
     func configureStopButton(){
         view.addSubview(stopButton)
+        stopButton.addTarget(self, action: #selector(stopButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             stopButton.widthAnchor.constraint(equalToConstant: 260),
@@ -52,8 +70,13 @@ class CardSelectionVC: UIViewController {
         ])
     }
     
+    @objc func stopButtonTapped(_ sender: UIButton) {
+        timer.invalidate()
+    }
+    
     func configureRestartButton(){
         view.addSubview(restartButton)
+        restartButton.addTarget(self, action: #selector(restartButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             restartButton.widthAnchor.constraint(equalToConstant: 120),
@@ -62,6 +85,11 @@ class CardSelectionVC: UIViewController {
             restartButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor, constant: 35)
             
         ])
+    }
+    
+    @objc func restartButtonTapped(_ sender: UIButton) {
+        timer.invalidate()
+        startTimer()
     }
     
     func configureRulesButton(){

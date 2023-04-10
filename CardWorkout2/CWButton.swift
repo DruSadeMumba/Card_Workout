@@ -20,8 +20,8 @@ class CWButton: UIButton {
     
     init(backgroundColour: UIColor, title: String, color: UIColor){
         super.init(frame: .zero)
-        //self.backgroundColor = backgroundColour
-        self.tintColor = backgroundColour
+        self.backgroundColor = backgroundColour
+        //self.tintColor = backgroundColour
         setTitle(title, for: .normal)
         setTitleColor(color, for: .normal)
         configure()

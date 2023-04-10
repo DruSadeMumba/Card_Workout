@@ -65,10 +65,10 @@
 				6ECCDDB429DD9636005B7FF6 /* CWButton.swift */,
 				6ECCDDB229DD8C78005B7FF6 /* CardSelectionVC.swift */,
 				6E155FC229E3F6FA009201D7 /* RulesVC.swift */,
+				6E155FC629E415EB009201D7 /* Card.swift */,
 				6E21AD0B29DBFCD300272416 /* Assets.xcassets */,
 				6E21AD0D29DBFCD300272416 /* LaunchScreen.storyboard */,
 				6E21AD1029DBFCD300272416 /* Info.plist */,
-				6E155FC629E415EB009201D7 /* Card.swift */,
 			);
 			path = CardWorkout2;
 			sourceTree = "<group>";
