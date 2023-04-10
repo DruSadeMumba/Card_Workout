@@ -18,17 +18,19 @@ class CWButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(backgroundColour: UIColor, title: String){
+    init(backgroundColour: UIColor, title: String, color: UIColor){
         super.init(frame: .zero)
-        self.backgroundColor = backgroundColour
+        //self.backgroundColor = backgroundColour
+        self.tintColor = backgroundColour
         setTitle(title, for: .normal)
+        setTitleColor(color, for: .normal)
         configure()
     }
     
     func configure(){
         layer.cornerRadius = 10
+        layer.borderWidth = 1
         titleLabel?.font = .systemFont(ofSize: 19, weight: .bold)
-        setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }
 

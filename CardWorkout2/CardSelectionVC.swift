@@ -10,9 +10,9 @@ import UIKit
 class CardSelectionVC: UIViewController {
     
     let cardImageView = UIImageView()
-    let stopButton    = CWButton(backgroundColour: .systemRed, title:   "STOP!")
-    let restartButton = CWButton(backgroundColour: .systemGreen, title: "RESTART")
-    let rulesButton   = CWButton(backgroundColour: .systemCyan, title:  "RULES")
+    let stopButton    = CWButton(backgroundColour: .systemRed, title:   "STOP!", color: .white)
+    let restartButton = CWButton(backgroundColour: .systemGreen, title: "RESTART", color: .white)
+    let rulesButton   = CWButton(backgroundColour: .systemCyan, title:  "RULES", color: .white)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +66,7 @@ class CardSelectionVC: UIViewController {
     
     func configureRulesButton(){
         view.addSubview(rulesButton)
+        rulesButton.addTarget(self, action: #selector(presentRulesVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             rulesButton.widthAnchor.constraint(equalToConstant: 120),
@@ -76,4 +77,7 @@ class CardSelectionVC: UIViewController {
         ])
     }
     
+    @objc func presentRulesVC(){
+        present(RulesVC(), animated: true)
+    }
 }
