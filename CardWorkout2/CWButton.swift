@@ -27,11 +27,10 @@ class CWButton: UIButton {
         configuration?.baseBackgroundColor = colour
         configuration?.cornerStyle = .large
         configuration?.image = UIImage(systemName: imageName)
-        configuration?.imagePadding = 2
-        //configuration?.imagePlacement = .trailing
+        configuration?.imagePadding = 7
+        configuration?.imagePlacement = .trailing
         
         translatesAutoresizingMaskIntoConstraints = false
-        
     }
     
 }

@@ -60,6 +60,7 @@ class CardSelectionVC: UIViewController {
     func configureStopButton(){
         view.addSubview(stopButton)
         stopButton.addTarget(self, action: #selector(stopButtonTapped), for: .touchUpInside)
+        stopButton.titleLabel?.font = UIFont(name: "ChalkboardSE-Regular", size: 25)
         
         NSLayoutConstraint.activate([
             stopButton.widthAnchor.constraint(equalToConstant: 260),
@@ -72,11 +73,13 @@ class CardSelectionVC: UIViewController {
     
     @objc func stopButtonTapped() {
         timer.invalidate()
+        
     }
     
     func configureRestartButton(){
         view.addSubview(restartButton)
         restartButton.addTarget(self, action: #selector(restartButtonTapped), for: .touchUpInside)
+        restartButton.titleLabel?.font = UIFont(name: "ChalkboardSE-Regular", size: 15)
         
         NSLayoutConstraint.activate([
             restartButton.widthAnchor.constraint(equalToConstant: 120),
@@ -95,6 +98,7 @@ class CardSelectionVC: UIViewController {
     func configureRulesButton(){
         view.addSubview(rulesButton)
         rulesButton.addTarget(self, action: #selector(presentRulesVC), for: .touchUpInside)
+        rulesButton.titleLabel?.font = UIFont(name: "ChalkboardSE-Regular", size: 15)
         
         NSLayoutConstraint.activate([
             rulesButton.widthAnchor.constraint(equalToConstant: 120),
